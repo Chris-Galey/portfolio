@@ -1,8 +1,17 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Roboto_Mono, Schibsted_Grotesk } from "next/font/google";
 import Layout from "./components/Layout";
-import Tabs from "./components/Tabs/Tabs";
-const inter = Inter({ subsets: ["latin"] });
+
+const roboto_mono = Roboto_Mono({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-secondary",
+});
+const schibsted_grotesk = Schibsted_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "900"],
+  variable: "--font-primary",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -11,8 +20,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html
+      lang="en"
+      className={`${roboto_mono.variable} ${schibsted_grotesk.variable}`}
+    >
+      <body>
         <Layout>
           <main>{children}</main>
         </Layout>

@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Header.module.css";
+
 export default function Header() {
   const navLinks = [
     { href: "/", name: "home" },
@@ -19,16 +20,17 @@ export default function Header() {
         <span className={styles.galey}>Galey</span>
       </div>
 
-      <div className={styles.main_nav}>
+      <div className={styles.nav__wrapper}>
         <nav className={styles.nav}>
           <ul>
             {navLinks.map((link) => {
               const isActive = pathname.startsWith(link.href);
 
               return (
-                <li>
+                // eslint-disable-next-line react/jsx-key
+                <li className={styles.item}>
                   <Link
-                    className={isActive ? styles.active : styles.inactive}
+                    className={isActive ? styles.active : ""}
                     href={link.href}
                     key={link.name}
                   >
@@ -41,12 +43,12 @@ export default function Header() {
         </nav>
 
         <div className={styles.socials}>
-          <div>
-            <a href="">x</a>
-          </div>
-          <div>
-            <a href="">y</a>
-          </div>
+          <button class={styles.social}>
+            <a href="">Github</a>
+          </button>
+          <button class={styles.social}>
+            <a href="">LinkedIn</a>
+          </button>
         </div>
       </div>
     </header>

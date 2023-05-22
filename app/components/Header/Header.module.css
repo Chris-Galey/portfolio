@@ -1,28 +1,32 @@
 .header {
+  font-family: var(--font-primary);
   width: 90%;
-  height: 10vh;
+  height: 6vh;
   margin: 0 auto;
-  padding: 2rem 15rem;
+  padding: 0rem 8rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
 }
 .name {
-  font-size: 1.7rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  font-weight: 800;
+
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
 }
-.galey {
-}
-.main_nav {
-  font-size: 1.5rem;
-  font-weight: 600;
+
+.nav__wrapper {
+  font-size: 1.7rem;
+  font-weight: 400;
+  text-transform: capitalize;
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 5rem;
 }
 .nav {
@@ -35,7 +39,7 @@
   display: flex;
   flex-direction: row;
   list-style: none;
-  gap: 1rem;
+  gap: 2rem;
 }
 .nav ul:last-child {
   margin-right: 5rem;
@@ -43,10 +47,112 @@
 .socials {
   display: flex;
   flex-direction: row;
+  gap: 2rem;
 }
+.social {
+  font-family: inherit;
+  text-decoration: none;
+  padding: 6px 15px;
+  /* border-radius: var(--border-radius); */
+  border: 1px solid var(--color-tertiary);
+  position: relative;
+}
+.social::after {
+  position: absolute;
+  content: "";
+  top: -2px;
+  left: 10%;
+  height: 2px;
+  width: 5%;
+  z-index: 11;
+  background: #eee;
+  transition: all 0.4s ease-in-out;
+}
+.social::before {
+  position: absolute;
+  content: "";
+  bottom: -2px;
+  right: 10%;
+  height: 2px;
+  width: 5%;
+  z-index: 10;
+  background: #eee;
+  transition: all 0.4s ease-in-out;
+}
+.social:hover::before {
+  transition: all 0.6s ease-in-out;
+  cursor: pointer;
+  right: 20%;
+}
+.social:hover::after {
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  left: 20%;
+}
+
 .active {
-  color: var(--color-tertiary);
+  animation-play-state: paused;
 }
 .inactive {
-  color: var(--color-primary);
+}
+
+.item {
+  text-decoration: none;
+  padding: 0rem 0.5rem;
+  position: relative;
+  border: none;
+  background-size: 200% 100%;
+  background-image: linear-gradient(
+    to left,
+    var(--color-primary) 50%,
+    var(--color-bg) 50%
+  );
+  border-radius: 3px;
+  transition: 0.8s ease-in-out;
+  animation: out 1s;
+}
+.item:hover {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  transition: 1.3s ease-in-out;
+
+  animation: in 0.7s forwards;
+  animation-delay: 0.2s;
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust this value to control the height of the border */
+  width: 0;
+  height: 1px; /* Adjust this value to control the thickness of the border */
+
+  border-bottom: 2px solid var(--color-tertiary);
+
+  transition: width 0.8s ease-out;
+}
+.item:hover::after {
+  width: 100%;
+}
+
+@keyframes in {
+  from {
+    opacity: 1;
+    background-position: 0 0;
+  }
+  to {
+    opacity: 1;
+    background-position: -100% 0;
+  }
+}
+@keyframes out {
+  from {
+    opacity: 1;
+    background-position: -100% 0;
+  }
+  to {
+    opacity: 1;
+    background-position: -200% 0;
+  }
 }
