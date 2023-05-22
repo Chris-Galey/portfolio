@@ -1,14 +1,20 @@
+"use client";
 import Image from "next/image";
 import styles from "./home.module.css";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
   return (
     <section className={styles.home}>
       <div className={styles.name}>
-        <h1 className={styles.name__content}>Chris Galey</h1>
+        <h1 className={styles.name__content}>Christopher Galey</h1>
       </div>
       <div className={styles.description}>
-        <h2 class={styles.description__content}>
+        <h2 className={styles.description__content}>
           A designer/front-end developer with a passion for web design.{" "}
         </h2>
       </div>
@@ -22,7 +28,8 @@ export default function Home() {
           alt="Picture of the author"
         />
       </div>
-      <div className={styles.welcome}>Welcome</div>
+
+      <h1 className={styles.welcome__text}>Welcome</h1>
     </section>
   );
 }
