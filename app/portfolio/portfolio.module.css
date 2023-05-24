@@ -1,0 +1,41 @@
+.portfolio {
+  height: 70%;
+  width: 100%;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+}
+.wrapper {
+  height: 100%;
+  width: 100%;
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  gap: 1rem;
+}
+.card {
+  padding: 1rem;
+  text-transform: uppercase;
+  height: 100%;
+  background-color: white;
+  position: relative;
+}
+.number {
+  font-weight: 800;
+}
+.title {
+  font-weight: 800;
+}
+.description {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-style: italic;
+}
+.image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  object-fit: contain;
+}
