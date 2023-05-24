@@ -43,10 +43,10 @@ export default function Header() {
         </nav>
 
         <div className={styles.socials}>
-          <button class={styles.social}>
+          <button className={styles.social}>
             <a href="">Github</a>
           </button>
-          <button class={styles.social}>
+          <button className={styles.social}>
             <a href="">LinkedIn</a>
           </button>
         </div>
