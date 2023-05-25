@@ -31,17 +31,17 @@ const bio =
 
 export default function About() {
   return (
-    <section className={styles.wrapper}>
-      <div className={styles.about}>
-        <h2>About</h2>
+    <section className={styles.about}>
+      <div className={styles.bio}>
+        <h4 className={styles.header__about}>About.</h4>
         <p>{bio}</p>
       </div>
       <div className={styles.skills}>
-        <h2>Skills</h2>
+        <h4 className={styles.header__skills}>Skills.</h4>
         <div className={styles.skills__grid}>
           {skills.map((skill) => (
             <figure className={styles.card} key={skill.skill}>
-              <h4>{skill.skill}</h4>
+              <h5>{skill.skill}</h5>
               <div className={styles.level}>
                 <div
                   className={`${styles.level__bg}`}

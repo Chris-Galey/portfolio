@@ -35,7 +35,7 @@ const projects = [
     number: "04.",
     title: "Coming Soon...",
     description: "Project in the works...",
-    image: "",
+    image: "/",
     link: "https://github.com/Chris-Galey/cranberry-lake-campground",
     width: 500,
     height: 500,
@@ -64,7 +64,6 @@ export default function portfolio() {
   const curSlide = {
     transform: `translateX(${slide * -25}%)`,
   };
-  console.log(slide, curSlide);
 
   function nextSlider() {
     if (slide >= 2) {
@@ -84,13 +83,15 @@ export default function portfolio() {
 
   return (
     <section className={styles.portfolio}>
+      <div className={styles.header}>
+        <h4 className={styles.featured}>Featured Work.</h4>
+      </div>
       <div className={styles.slider__wrapper}>
-        <small className={styles.slider__title}>Featured Work</small>
         <div className={styles.slider} style={curSlide}>
           {projects.map((project, index) => (
             <div className={styles.card} key={project.index}>
-              <h4 className={styles.number}>{project.number}</h4>
-              <h4 className={styles.title}>{project.title}</h4>
+              <h5 className={styles.number}>{project.number}</h5>
+              <h5 className={styles.title}>{project.title}</h5>
 
               <Image
                 src={project.image}
@@ -103,39 +104,39 @@ export default function portfolio() {
             </div>
           ))}
         </div>
-      </div>
 
-      <div className={styles.scroll}>
-        <div className={styles.pagination}>
-          <div
-            className={
-              slide == 0
-                ? `${styles.bar} ${styles.bar__active}`
-                : `${styles.bar}`
-            }
-          ></div>
-          <div
-            className={
-              slide == 1
-                ? `${styles.bar} ${styles.bar__active}`
-                : `${styles.bar}`
-            }
-          ></div>
-          <div
-            className={
-              slide == 2
-                ? `${styles.bar} ${styles.bar__active}`
-                : `${styles.bar}`
-            }
-          ></div>
-        </div>
-        <div className={styles.buttons}>
-          <button className={styles.button} onClick={prevSlider}>
-            <div className={styles.button__prev}>&larr;</div>
-          </button>
-          <button className={styles.button} onClick={nextSlider}>
-            <div className={styles.button__next}>&rarr;</div>
-          </button>
+        <div className={styles.scroll}>
+          <div className={styles.pagination}>
+            <div
+              className={
+                slide == 0
+                  ? `${styles.bar} ${styles.bar__active}`
+                  : `${styles.bar}`
+              }
+            ></div>
+            <div
+              className={
+                slide == 1
+                  ? `${styles.bar} ${styles.bar__active}`
+                  : `${styles.bar}`
+              }
+            ></div>
+            <div
+              className={
+                slide == 2
+                  ? `${styles.bar} ${styles.bar__active}`
+                  : `${styles.bar}`
+              }
+            ></div>
+          </div>
+          <div className={styles.buttons}>
+            <button className={styles.button} onClick={prevSlider}>
+              <div className={styles.button__prev}>&larr;</div>
+            </button>
+            <button className={styles.button} onClick={nextSlider}>
+              <div className={styles.button__next}>&rarr;</div>
+            </button>
+          </div>
         </div>
       </div>
     </section>

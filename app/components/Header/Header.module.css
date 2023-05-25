@@ -1,21 +1,22 @@
 .header {
   font-family: var(--font-primary);
-  width: 90%;
+  width: 100%;
   height: 8vh;
   margin: 0 auto;
   padding: 0rem 8rem;
+  border-bottom: 1px solid var(--color-border);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 .name {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
-
   display: flex;
   flex-direction: row;
-  gap: 0.5rem;
+  gap: 0.3rem;
+  text-transform: uppercase;
 }
 
 .nav__wrapper {
@@ -42,12 +43,12 @@
 .nav ul:last-child {
   margin-right: 5rem;
 }
-.socials {
+.nav__socials {
   display: flex;
   flex-direction: row;
   gap: 2rem;
 }
-.social {
+.nav__social {
   font-family: inherit;
   text-decoration: none;
   padding: 6px 15px;
@@ -55,7 +56,7 @@
   border: 1px solid var(--color-tertiary);
   position: relative;
 }
-.social::after {
+.nav__social::after {
   position: absolute;
   content: "";
   top: -2px;
@@ -63,10 +64,10 @@
   height: 2px;
   width: 5%;
   z-index: 11;
-  background: #eee;
+  background: var(--color-bg);
   transition: all 0.4s ease-in-out;
 }
-.social::before {
+.nav__social::before {
   position: absolute;
   content: "";
   bottom: -2px;
@@ -74,22 +75,22 @@
   height: 2px;
   width: 5%;
   z-index: 10;
-  background: #eee;
+  background: var(--color-bg);
   transition: all 0.4s ease-in-out;
 }
-.social:hover::before {
+.nav__social:hover::before {
   transition: all 0.6s ease-in-out;
   cursor: pointer;
   right: 20%;
 }
-.social:hover::after {
+.nav__social:hover::after {
   transition: all 0.4s ease-in-out;
   cursor: pointer;
   left: 20%;
 }
 
 .active {
-  animation-play-state: paused;
+  color: var(--color-tertiary);
 }
 
 .item {

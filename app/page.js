@@ -11,12 +11,14 @@ export default function Home() {
   return (
     <section className={styles.home}>
       <div className={styles.name}>
-        <h1 className={styles.name__content}>Christopher Galey</h1>
+        <div className={styles.name__content}>
+          {" "}
+          <h3 className={styles.prefix}>Hello, I'm</h3>
+          <h2>Christopher Galey</h2>
+        </div>
       </div>
       <div className={styles.description}>
-        <h2 className={styles.description__content}>
-          A designer/front-end developer with a passion for web design.{" "}
-        </h2>
+        <h4>Web developer and Code Platoon student. </h4>
       </div>
       <div className={styles.image}>
         {/* <div className={styles.TRborder}></div>
@@ -28,7 +30,6 @@ export default function Home() {
           alt="Picture of the author"
         />
       </div>
-
       <h1 className={styles.welcome__text}>Welcome</h1>
     </section>
   );

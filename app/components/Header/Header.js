@@ -42,11 +42,11 @@ export default function Header() {
           </ul>
         </nav>
 
-        <div className={styles.socials}>
-          <button className={styles.social}>
+        <div className={styles.nav__socials}>
+          <button className={styles.nav__social}>
             <a href="">Github</a>
           </button>
-          <button className={styles.social}>
+          <button className={styles.nav__social}>
             <a href="">LinkedIn</a>
           </button>
         </div>

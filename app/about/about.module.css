@@ -1,8 +1,25 @@
-.wrapper {
+.about {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+}
+.header__about {
+  position: relative;
+}
+.header__about::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px; /* Adjust this value to control the height of the border */
+  width: 0;
+  height: 1px; /* Adjust this value to control the thickness of the border */
+  border-bottom: 2px solid var(--color-tertiary);
+  transition: width 0.8s ease-out;
+}
+.bio:hover .header__about::after {
+  width: 100%;
+  transition: width 0.8s ease-out;
 }
 .wrapper h2 {
   font-weight: 800;
@@ -10,31 +27,48 @@
 .wrapper p {
   padding: 0rem 10rem;
 }
-.about {
+.bio {
   display: flex;
-  flex-direction: column;
-  flex: 2;
-  gap: 2rem;
-  margin-top: 5rem;
+  flex-direction: row;
+  align-items: center;
+  padding: 10rem;
+  gap: 10rem;
 }
 .skills {
   display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 5rem;
+  flex-direction: row;
+  align-items: center;
+  padding: 10rem;
+  gap: 10rem;
   border-top: 1px solid var(--color-border);
   background-color: var(--color-bg-dark);
 }
+.header__skills {
+  position: relative;
+}
+.header__skills::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px; /* Adjust this value to control the height of the border */
+  width: 0;
+  height: 1px; /* Adjust this value to control the thickness of the border */
+  border-bottom: 2px solid var(--color-tertiary);
+  transition: width 0.8s ease-out;
+}
+.skills:hover .header__skills::after {
+  width: 100%;
+  transition: width 0.8s ease-out;
+}
 .skills__grid {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0rem 10rem;
+  gap: 3rem;
 }
 .card {
-  width: 20%;
+  min-width: 15%;
   display: flex;
   flex-direction: column;
   justify-items: center;

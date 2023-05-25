@@ -1,0 +1,88 @@
+.contact {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 2fr 3fr;
+}
+.services {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  padding: 5rem;
+}
+.header__services {
+  position: relative;
+}
+.header__services::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px; /* Adjust this value to control the height of the border */
+  width: 0;
+  height: 1px; /* Adjust this value to control the thickness of the border */
+  border-bottom: 2px solid var(--color-tertiary);
+  transition: width 0.8s ease-out;
+}
+.services:hover .header__services::after {
+  width: 100%;
+  transition: width 0.8s ease-out;
+}
+.services__grid {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(20%, 25%));
+  justify-content: center;
+  gap: 5rem;
+}
+.services__card {
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
+}
+.form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  padding: 5rem;
+  background-color: var(--color-bg-dark);
+  border-top: 1px solid var(--color-border);
+}
+.form__wrapper {
+  width: 80%;
+}
+.form form {
+  display: flex;
+}
+.form label {
+}
+.form input {
+}
+.form textarea {
+  height: 100%;
+  width: 50rem;
+}
+.header__contact {
+  position: relative;
+}
+.header__contact::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px; /* Adjust this value to control the height of the border */
+  width: 0;
+  height: 1px; /* Adjust this value to control the thickness of the border */
+  border-bottom: 2px solid var(--color-tertiary);
+  transition: width 0.8s ease-out;
+}
+.form:hover .header__contact::after {
+  width: 100%;
+  transition: width 0.8s ease-out;
+}
