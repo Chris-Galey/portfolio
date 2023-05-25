@@ -11,7 +11,7 @@
   font-weight: 900;
   position: absolute;
   color: transparent;
-  bottom: -6%;
+  bottom: -7%;
   right: 5%;
 
   -webkit-text-stroke: 1px var(--color-border);
@@ -19,10 +19,12 @@
 
 .name {
   position: relative;
+  /* background-color: transparent;
+  background-image: radial-gradient(var(--color-border) 0.5px, transparent 1px);
+  background-size: 5px 5px; */
 }
 .name__content {
   width: 70%;
-
   position: absolute;
   bottom: 5%;
   left: 5%;
@@ -36,7 +38,7 @@
 .description__content {
   font-family: var(--font-secondary);
   width: 50%;
-
+  border-bottom: 2px solid var(--color-tertiary);
   position: absolute;
   top: 5%;
   left: 5%;
@@ -50,7 +52,7 @@
   left: 80%;
 
   transform-origin: center center;
-  transform: rotate(0deg) translate(-50%, -50%);
+  transform: rotate(-6deg) translate(-50%, -50%);
   z-index: 2;
 }
 .image::before {
@@ -62,7 +64,7 @@
   height: 105%;
   transform: translate(-50%, -50%);
   background-color: transparent;
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(0px);
   /* border-radius: var(--border-radius); */
 
   z-index: -1;

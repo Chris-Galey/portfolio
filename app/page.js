@@ -19,8 +19,8 @@ export default function Home() {
         </h2>
       </div>
       <div className={styles.image}>
-        <div className={styles.TRborder}></div>
-        <div className={styles.BLborder}></div>
+        {/* <div className={styles.TRborder}></div>
+        <div className={styles.BLborder}></div> */}
         <Image
           src="/hero.jpg"
           width={500}
