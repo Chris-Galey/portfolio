@@ -35,7 +35,7 @@ const projects = [
     number: "04.",
     title: "Coming Soon...",
     description: "Project in the works...",
-    image: "/hero.jpg",
+    image: "",
     link: "https://github.com/Chris-Galey/cranberry-lake-campground",
     width: 500,
     height: 500,
@@ -44,7 +44,7 @@ const projects = [
     number: "05.",
     title: "Coming Soon...",
     description: "Project in the works...",
-    image: "/hero.jpg",
+    image: "",
     link: "https://github.com/Chris-Galey/cranberry-lake-campground",
     width: 500,
     height: 500,
@@ -53,7 +53,7 @@ const projects = [
     number: "06.",
     title: "Coming Soon...",
     description: "Project in the works...",
-    image: "/hero.jpg",
+    image: "",
     link: "https://github.com/Chris-Galey/cranberry-lake-campground",
     width: 500,
     height: 500,
@@ -91,6 +91,7 @@ export default function portfolio() {
             <div className={styles.card} key={project.index}>
               <h4 className={styles.number}>{project.number}</h4>
               <h4 className={styles.title}>{project.title}</h4>
+
               <Image
                 src={project.image}
                 width={project.width}

@@ -1,6 +1,10 @@
 import styles from "./about.module.css";
 const skills = [
-  { skill: "JavaScript", level: 6 },
+  { skill: "JavaScript", level: 7 },
+  {
+    skill: "NodeJS",
+    level: 3,
+  },
   {
     skill: "React",
     level: 5,
@@ -22,12 +26,15 @@ const skills = [
     level: 5,
   },
 ];
+const bio =
+  "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime odit incidunt atque facilis alias, expedita nesciunt similique voluptas aperiam modi sapiente nam tenetur, minus ratione eius eligendi necessitatibus, molestias saepe.";
+
 export default function About() {
   return (
     <section className={styles.wrapper}>
       <div className={styles.about}>
         <h2>About</h2>
-        <p>This is the about page</p>
+        <p>{bio}</p>
       </div>
       <div className={styles.skills}>
         <h2>Skills</h2>
@@ -36,7 +43,10 @@ export default function About() {
             <figure className={styles.card} key={skill.skill}>
               <h4>{skill.skill}</h4>
               <div className={styles.level}>
-                <div className={styles.level__bg}></div>
+                <div
+                  className={`${styles.level__bg}`}
+                  style={{ height: `${skill.level * 10}%` }}
+                ></div>
               </div>
             </figure>
           ))}
