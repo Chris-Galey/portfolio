@@ -10,6 +10,7 @@ const projects = [
     description: "screenshot of space guide project",
     image: "/spaceguide.png",
     link: "https://github.com/Chris-Galey/Space_Guide",
+    alt: "screenshot of space guide project",
     width: 500,
     height: 500,
   },
@@ -19,6 +20,7 @@ const projects = [
     description: "Screenshot of portfolio project",
     image: "/hero.jpg",
     link: "https://github.com/Chris-Galey/portfolio",
+    alt: "screenshot of portfolio project",
     width: 500,
     height: 500,
   },
@@ -28,6 +30,7 @@ const projects = [
     description: "Screenshot of cranberry lake campground project",
     image: "/hero.jpg",
     link: "https://github.com/Chris-Galey/cranberry-lake-campground",
+    alt: "screenshot of cranberry lake project",
     width: 500,
     height: 500,
   },
@@ -37,6 +40,7 @@ const projects = [
     description: "Project in the works...",
     image: "/",
     link: "https://github.com/Chris-Galey/cranberry-lake-campground",
+    alt: "screenshot of coming soon project",
     width: 500,
     height: 500,
   },
@@ -46,6 +50,7 @@ const projects = [
     description: "Project in the works...",
     image: "",
     link: "https://github.com/Chris-Galey/cranberry-lake-campground",
+    alt: "screenshot of coming soon project",
     width: 500,
     height: 500,
   },
@@ -55,6 +60,7 @@ const projects = [
     description: "Project in the works...",
     image: "",
     link: "https://github.com/Chris-Galey/cranberry-lake-campground",
+    alt: "screenshot of coming soon project",
     width: 500,
     height: 500,
   },
@@ -97,10 +103,12 @@ export default function portfolio() {
                 src={project.image}
                 width={project.width}
                 height={project.height}
-                alt={project.description}
+                alt={project.alt}
                 className={styles.image}
               />
-              <q className={styles.description}>{project.description}</q>
+              <div className={styles.details}>
+                <small>{project.description}</small>
+              </div>
             </div>
           ))}
         </div>

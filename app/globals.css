@@ -85,8 +85,8 @@ h5 {
 small,
 .text_small {
   font-size: 1.2rem;
+  font-family: var(--font-secondary);
   font-weight: 400;
-  color: var(--color-primary-light);
 }
 
 a {

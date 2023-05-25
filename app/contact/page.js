@@ -1,16 +1,18 @@
 import styles from "./contact.module.css";
 const services = [
   {
-    title: "Web Design",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    title: "Front-end",
+    description: "Let me turn your brand story into a digital experience.",
   },
   {
-    title: "Web Design",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    title: "Back-end",
+    description:
+      "Light experience using NodeJS, express, and MongoDB, including user authentication and payments.",
   },
   {
-    title: "Web Design",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    title: "UI/UX",
+    description:
+      "Always exploring new ways to make websites more responsive and friendly.",
   },
 ];
 export default function contact() {
