@@ -24,7 +24,7 @@ export default function Header() {
         <nav className={styles.nav}>
           <ul>
             {navLinks.map((link) => {
-              const isActive = pathname.startsWith(link.href);
+              const isActive = pathname.length > 1 && pathname === link.href;
 
               return (
                 // eslint-disable-next-line react/jsx-key

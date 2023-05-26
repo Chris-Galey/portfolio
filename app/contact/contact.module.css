@@ -39,6 +39,7 @@
 .services__card {
   border: 2px solid var(--color-primary);
   border-radius: var(--border-radius);
+  background-color: var(--color-secondary);
   padding: 2rem;
   display: flex;
   flex-direction: column;

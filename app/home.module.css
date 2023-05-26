@@ -28,12 +28,12 @@
   font-family: var(--font-primary);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 3rem;
   position: absolute;
   bottom: 5%;
   left: 5%;
 }
-.prefix {
+.home h3 {
   font-weight: 400;
 }
 
@@ -43,9 +43,8 @@
   background-color: var(--color-bg-dark);
   position: relative;
 }
-.description h4 {
-  font-family: var(--font-secondary);
-  width: 40%;
+.description h3 {
+  width: 50%;
   position: absolute;
   top: 5%;
   left: 10%;
@@ -61,7 +60,6 @@
   left: 75%;
   transform-origin: center center;
   transform: rotate(-6deg) translate(-50%, -50%);
-  z-index: 2;
 }
 .image::before {
   content: "";

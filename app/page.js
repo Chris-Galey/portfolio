@@ -7,12 +7,12 @@ export default function Home() {
       <div className={styles.name}>
         <div className={styles.name__content}>
           {" "}
-          <h3 className={styles.prefix}>Hello, I'm</h3>
-          <h2>Christopher Galey</h2>
+          {/* <h3>Hello, I'm</h3> */}
+          <h1>Christopher Galey</h1>
         </div>
       </div>
       <div className={styles.description}>
-        <h4>Web developer and Code Platoon student. </h4>
+        <h3>Web developer and Code Platoon student. </h3>
       </div>
       <div className={styles.image}>
         <Image

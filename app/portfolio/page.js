@@ -93,26 +93,6 @@ export default function portfolio() {
         <h4 className={styles.featured}>Featured Work.</h4>
       </div>
       <div className={styles.slider__wrapper}>
-        <div className={styles.slider} style={curSlide}>
-          {projects.map((project, index) => (
-            <div className={styles.card} key={project.index}>
-              <h5 className={styles.number}>{project.number}</h5>
-              <h5 className={styles.title}>{project.title}</h5>
-
-              <Image
-                src={project.image}
-                width={project.width}
-                height={project.height}
-                alt={project.alt}
-                className={styles.image}
-              />
-              <div className={styles.details}>
-                <small>{project.description}</small>
-              </div>
-            </div>
-          ))}
-        </div>
-
         <div className={styles.scroll}>
           <div className={styles.pagination}>
             <div
@@ -145,6 +125,25 @@ export default function portfolio() {
               <div className={styles.button__next}>&rarr;</div>
             </button>
           </div>
+        </div>
+        <div className={styles.slider} style={curSlide}>
+          {projects.map((project, index) => (
+            <div className={styles.card} key={project.index}>
+              <h5 className={styles.number}>{project.number}</h5>
+              <h5 className={styles.title}>{project.title}</h5>
+
+              <Image
+                src={project.image}
+                width={project.width}
+                height={project.height}
+                alt={project.alt}
+                className={styles.image}
+              />
+              <div className={styles.details}>
+                <small>{project.description}</small>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
