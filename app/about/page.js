@@ -27,7 +27,7 @@ const skills = [
   },
 ];
 const bio =
-  "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime odit incidunt atque facilis alias, expedita nesciunt similique voluptas aperiam modi sapiente nam tenetur, minus ratione eius eligendi necessitatibus, molestias saepe.";
+  "I am a Marine veteran with a passion for web development and over a year of experience building web applications using JavaScript and React. In addition to my technical expertise, I am a strong believer in collaboration and teamwork. I thrive in an environment where I can work closely with others, brainstorm ideas, and bring them to fruition. Building web applications is not just a job for me; it's a creative outlet and a way to make a positive impact on people's lives. I am currently seeking new opportunities where I can apply my skills, knowledge, and passion for web development.";
 
 export default function About() {
   return (

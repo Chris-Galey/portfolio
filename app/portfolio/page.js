@@ -90,9 +90,6 @@ export default function portfolio() {
   return (
     <section className={styles.portfolio}>
       <div className={styles.header}>
-        <h4 className={styles.featured}>Featured Work.</h4>
-      </div>
-      <div className={styles.slider__wrapper}>
         <div className={styles.scroll}>
           <div className={styles.pagination}>
             <div
@@ -117,6 +114,7 @@ export default function portfolio() {
               }
             ></div>
           </div>
+
           <div className={styles.buttons}>
             <button className={styles.button} onClick={prevSlider}>
               <div className={styles.button__prev}>&larr;</div>
@@ -126,6 +124,9 @@ export default function portfolio() {
             </button>
           </div>
         </div>
+        <h4 className={styles.featured}>Featured Work.</h4>
+      </div>
+      <div className={styles.slider__wrapper}>
         <div className={styles.slider} style={curSlide}>
           {projects.map((project, index) => (
             <div className={styles.card} key={project.index}>

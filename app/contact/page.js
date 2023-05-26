@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import styles from "./contact.module.css";
 const services = [
   {
@@ -16,6 +18,41 @@ const services = [
   },
 ];
 export default function contact() {
+  const emailValidator = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const [name, setName] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [messageError, setMessageError] = useState("");
+
+  const nameChangeHandler = (e) => {
+    if (e.target.value.length > 25) {
+      setNameError(true);
+    } else {
+      setName(e.target.value);
+      setNameError(false);
+    }
+  };
+  const msgChangeHandler = (e) => {
+    if (e.target.value.length > 500) {
+      setMessageError(true);
+    } else {
+      setMessage(e.target.value);
+      setMessageError(false);
+    }
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Form submission logic
+    // Replace with your own implementation to send the form data to the server
+    // and handle sending the email
+
+    // Reset form fields after submission
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
   return (
     <section className={styles.contact}>
       <div className={styles.services}>
@@ -32,15 +69,52 @@ export default function contact() {
       <div className={styles.form}>
         <h4 className={styles.header__contact}>Let's chat.</h4>
         <div className={styles.form__wrapper}>
-          <form>
-            <label htmlFor="name">
-              Name
-              <input type="text" />
-            </label>
-            <label htmlFor="msg">
-              Message
-              <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
-            </label>
+          <form onSubmit={handleSubmit}>
+            <div className={styles.info}>
+              <label htmlFor="name">
+                Name
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Your Name"
+                  value={name}
+                  onChange={nameChangeHandler}
+                  required
+                />
+                <p>{nameError && "Name below 25 characters please"}</p>
+              </label>
+
+              <label htmlFor="email">
+                Email
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Your Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </label>
+            </div>
+
+            <div className={styles.msg}>
+              <label htmlFor="message">
+                Message
+                <textarea
+                  id="message"
+                  value={message}
+                  placeholder="Your Message..."
+                  onChange={msgChangeHandler}
+                  required
+                ></textarea>
+              </label>
+              <p>{messageError && "500 characters or less"}</p>
+            </div>
+            <div className={styles.btn}>
+              <button className={styles.submit} type="submit">
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </div>
