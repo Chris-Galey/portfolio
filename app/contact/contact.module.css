@@ -67,8 +67,8 @@
   justify-content: center;
 }
 .form form {
-  width: 60%;
-  height: 100%;
+  width: 50%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   gap: 5rem;
@@ -132,6 +132,7 @@
   margin: 0;
   resize: none;
   background-color: var(--color-bg-dark);
+  border-bottom: 2px solid var(--color-primary);
 }
 
 .header__contact {
@@ -154,6 +155,7 @@
 }
 .submit {
   font-family: inherit;
+  font-size: 1.5rem;
   text-decoration: none;
   padding: 6px 15px;
 

@@ -23,6 +23,8 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [messageError, setMessageError] = useState("");
+  const [success, setSuccess] = useState(null);
+  const [failed, setFailed] = useState(null);
 
   const nameChangeHandler = (e) => {
     if (e.target.value.length > 25) {
@@ -42,16 +44,21 @@ export default function Contact() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Form submission logic
-    // Replace with your own implementation to send the form data to the server
-    // and handle sending the email
-
+    const myForm = { email, name, message };
+    // const formData = new FormData(myForm);
+    fetch("/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(myForm).toString(),
+    })
+      .then(() => setSuccess(true))
+      .catch((error) => setFailed(error));
     // Reset form fields after submission
     setName("");
     setEmail("");
     setMessage("");
   };
+
   return (
     <section className={styles.contact}>
       <div className={styles.services}>
@@ -66,7 +73,7 @@ export default function Contact() {
         </div>
       </div>
       <div className={styles.form}>
-        <h4 className={styles.header__contact}>`Let&quot;s chat.`</h4>
+        <h4 className={styles.header__contact}>Let&apos;s chat.</h4>
         <div className={styles.form__wrapper}>
           <form
             onSubmit={handleSubmit}
@@ -122,6 +129,7 @@ export default function Contact() {
               <button className={styles.submit} type="submit">
                 Submit
               </button>
+              <p>{success === null ? "" : success ? "Success!" : failed}</p>
             </div>
           </form>
         </div>
