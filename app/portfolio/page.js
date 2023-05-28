@@ -36,36 +36,6 @@ const projects = [
     width: 1895,
     height: 887,
   },
-  {
-    number: "04.",
-    title: "Coming Soon...",
-    description: "Project in the works...",
-    image: "",
-    link: "",
-    alt: "screenshot of coming soon project",
-    width: 500,
-    height: 500,
-  },
-  {
-    number: "05.",
-    title: "Coming Soon...",
-    description: "Project in the works...",
-    image: "",
-    link: "",
-    alt: "screenshot of coming soon project",
-    width: 500,
-    height: 500,
-  },
-  {
-    number: "06.",
-    title: "Coming Soon...",
-    description: "Project in the works...",
-    image: "",
-    link: "https://github.com/Chris-Galey/cranberry-lake-campground",
-    alt: "screenshot of coming soon project",
-    width: 500,
-    height: 500,
-  },
 ];
 export default function Portfolio() {
   const [slide, setSlide] = useState(0);

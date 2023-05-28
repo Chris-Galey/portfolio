@@ -95,6 +95,9 @@
 }
 .btn {
   height: 10%;
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
 }
 .form label {
   font-weight: 600;

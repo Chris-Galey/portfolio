@@ -24,7 +24,6 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [messageError, setMessageError] = useState("");
   const [success, setSuccess] = useState(null);
-  const [failed, setFailed] = useState(null);
 
   const nameChangeHandler = (e) => {
     if (e.target.value.length > 25) {
@@ -45,15 +44,7 @@ export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const myForm = { email, name, message };
-    // const formData = new FormData(myForm);
-    fetch("/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(myForm).toString(),
-    })
-      .then(() => setSuccess(true))
-      .catch((error) => setFailed(error));
-    // Reset form fields after submission
+
     setName("");
     setEmail("");
     setMessage("");
@@ -75,13 +66,7 @@ export default function Contact() {
       <div className={styles.form}>
         <h4 className={styles.header__contact}>Let&apos;s chat.</h4>
         <div className={styles.form__wrapper}>
-          <form
-            onSubmit={handleSubmit}
-            method="POST"
-            netlify-honeypot="bot-field"
-            data-netlify="true"
-            data-netlify-recaptcha="true"
-          >
+          <form onSubmit={handleSubmit} method="POST">
             <div className={styles.content}>
               <div className={styles.info}>
                 <label htmlFor="name">
@@ -129,7 +114,7 @@ export default function Contact() {
               <button className={styles.submit} type="submit">
                 Submit
               </button>
-              <p>{success === null ? "" : success ? "Success!" : failed}</p>
+              <p>{success === null ? "" : "Success"}</p>
             </div>
           </form>
         </div>
