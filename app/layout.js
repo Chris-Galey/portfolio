@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Rubik, Roboto_Mono, Schibsted_Grotesk } from "next/font/google";
+import { Roboto_Mono, Schibsted_Grotesk } from "next/font/google";
 import Layout from "./components/Layout";
 
 const roboto_mono = Roboto_Mono({
@@ -12,11 +12,6 @@ const schibsted_grotesk = Schibsted_Grotesk({
   weight: ["400", "600", "700", "900"],
   variable: "--font-primary",
 });
-const rubik = Rubik({
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
-  variable: "--font-rubik",
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -27,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${roboto_mono.variable} ${rubik.variable} ${schibsted_grotesk.variable}`}
+      className={`${roboto_mono.variable} ${schibsted_grotesk.variable}`}
     >
       <body>
         <Layout>

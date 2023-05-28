@@ -17,8 +17,7 @@ const services = [
       "Always exploring new ways to make websites more responsive and friendly.",
   },
 ];
-export default function contact() {
-  const emailValidator = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+export default function Contact() {
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
   const [email, setEmail] = useState("");
@@ -67,7 +66,7 @@ export default function contact() {
         </div>
       </div>
       <div className={styles.form}>
-        <h4 className={styles.header__contact}>Let's chat.</h4>
+        <h4 className={styles.header__contact}>`Let&quot;s chat.`</h4>
         <div className={styles.form__wrapper}>
           <form
             onSubmit={handleSubmit}

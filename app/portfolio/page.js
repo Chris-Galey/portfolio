@@ -67,7 +67,7 @@ const projects = [
     height: 500,
   },
 ];
-export default function portfolio() {
+export default function Portfolio() {
   const [slide, setSlide] = useState(0);
   const curSlide = {
     transform: `translateX(${slide * -25}%)`,
