@@ -69,7 +69,13 @@ export default function contact() {
       <div className={styles.form}>
         <h4 className={styles.header__contact}>Let's chat.</h4>
         <div className={styles.form__wrapper}>
-          <form onSubmit={handleSubmit}>
+          <form
+            onSubmit={handleSubmit}
+            method="POST"
+            netlify-honeypot="bot-field"
+            data-netlify="true"
+            data-netlify-recaptcha="true"
+          >
             <div className={styles.content}>
               <div className={styles.info}>
                 <label htmlFor="name">
