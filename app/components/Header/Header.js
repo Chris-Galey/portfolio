@@ -44,10 +44,12 @@ export default function Header() {
 
         <div className={styles.nav__socials}>
           <button className={styles.nav__social}>
-            <a href="">Github</a>
+            <a href="https://github.com/Chris-Galey">Github</a>
           </button>
           <button className={styles.nav__social}>
-            <a href="">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/chris-galey-245156243/">
+              LinkedIn
+            </a>
           </button>
         </div>
       </div>

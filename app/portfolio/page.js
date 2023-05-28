@@ -7,39 +7,41 @@ const projects = [
   {
     number: "01.",
     title: "Space Guide.",
-    description: "screenshot of space guide project",
+    description:
+      "My first project, space guide. A web application that allows users to view upcoming space launches and news. Technology: JavaScript, CSS, Space Launch API.",
     image: "/spaceguide.png",
-    link: "https://github.com/Chris-Galey/Space_Guide",
+    link: "https://chic-belekoy-cddf55.netlify.app/#d5a80dcc-105b-445f-a8c4-394d7c7825ed",
     alt: "screenshot of space guide project",
-    width: 500,
-    height: 500,
+    width: 1722,
+    height: 4173,
   },
   {
     number: "02.",
     title: "Portfolio.",
-    description: "Screenshot of portfolio project",
-    image: "/hero.jpg",
+    description: "My portfolio website. Technology: React, CSS, and NextJS.",
+    image: "/portfolio.jpg",
     link: "https://github.com/Chris-Galey/portfolio",
     alt: "screenshot of portfolio project",
-    width: 500,
-    height: 500,
+    width: 1643,
+    height: 887,
   },
   {
     number: "03.",
     title: "Cranberry Lake Campground.",
-    description: "Screenshot of cranberry lake campground project",
-    image: "/hero.jpg",
+    description:
+      "My first full stack application in the works. A campground application that will include user authentication, booking services, and third-party payment system. Technology: A MERN stack that will be use NextJS framework and stripe payment services. ",
+    image: "/CLC.jpg",
     link: "https://github.com/Chris-Galey/cranberry-lake-campground",
     alt: "screenshot of cranberry lake project",
-    width: 500,
-    height: 500,
+    width: 1895,
+    height: 887,
   },
   {
     number: "04.",
     title: "Coming Soon...",
     description: "Project in the works...",
-    image: "/",
-    link: "https://github.com/Chris-Galey/cranberry-lake-campground",
+    image: "",
+    link: "",
     alt: "screenshot of coming soon project",
     width: 500,
     height: 500,
@@ -49,7 +51,7 @@ const projects = [
     title: "Coming Soon...",
     description: "Project in the works...",
     image: "",
-    link: "https://github.com/Chris-Galey/cranberry-lake-campground",
+    link: "",
     alt: "screenshot of coming soon project",
     width: 500,
     height: 500,
@@ -130,18 +132,28 @@ export default function portfolio() {
         <div className={styles.slider} style={curSlide}>
           {projects.map((project, index) => (
             <div className={styles.card} key={project.index}>
-              <h5 className={styles.number}>{project.number}</h5>
-              <h5 className={styles.title}>{project.title}</h5>
-
-              <Image
-                src={project.image}
-                width={project.width}
-                height={project.height}
-                alt={project.alt}
-                className={styles.image}
-              />
+              <div className={styles.card__header}>
+                <h5 className={styles.number}>{project.number}</h5>
+                <h5 className={styles.title}>{project.title}</h5>
+              </div>
+              {project.image ? (
+                <Image
+                  src={project.image}
+                  width={project.width}
+                  height={project.height}
+                  alt={project.alt}
+                  className={styles.image}
+                />
+              ) : null}
               <div className={styles.details}>
                 <small>{project.description}</small>
+                {project.link && (
+                  <p>
+                    <a href={project.link} target="_blank">
+                      View Domain
+                    </a>
+                  </p>
+                )}
               </div>
             </div>
           ))}

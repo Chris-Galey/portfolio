@@ -17,8 +17,8 @@ export default function Home() {
       <div className={styles.image}>
         <Image
           src="/hero.jpg"
-          width={500}
-          height={500}
+          width={3092}
+          height={4666}
           alt="Picture of the author"
         />
       </div>

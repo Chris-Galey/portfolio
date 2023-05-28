@@ -70,46 +70,49 @@ export default function contact() {
         <h4 className={styles.header__contact}>Let's chat.</h4>
         <div className={styles.form__wrapper}>
           <form onSubmit={handleSubmit}>
-            <div className={styles.info}>
-              <label htmlFor="name">
-                Name
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Your Name"
-                  value={name}
-                  onChange={nameChangeHandler}
-                  required
-                />
-                <p>{nameError && "Name below 25 characters please"}</p>
-              </label>
+            <div className={styles.content}>
+              <div className={styles.info}>
+                <label htmlFor="name">
+                  Name
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    value={name}
+                    onChange={nameChangeHandler}
+                    required
+                  />
+                  <p>{nameError && "Name below 25 characters please"}</p>
+                </label>
 
-              <label htmlFor="email">
-                Email
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Your Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </label>
+                <label htmlFor="email">
+                  Email
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </label>
+              </div>
+
+              <div className={styles.msg}>
+                <label htmlFor="message">
+                  Message
+                  <textarea
+                    id="message"
+                    value={message}
+                    placeholder="Your Message..."
+                    onChange={msgChangeHandler}
+                    required
+                  ></textarea>
+                </label>
+                <p>{messageError && "500 characters or less"}</p>
+              </div>
             </div>
 
-            <div className={styles.msg}>
-              <label htmlFor="message">
-                Message
-                <textarea
-                  id="message"
-                  value={message}
-                  placeholder="Your Message..."
-                  onChange={msgChangeHandler}
-                  required
-                ></textarea>
-              </label>
-              <p>{messageError && "500 characters or less"}</p>
-            </div>
             <div className={styles.btn}>
               <button className={styles.submit} type="submit">
                 Submit
