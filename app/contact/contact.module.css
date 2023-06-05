@@ -157,6 +157,8 @@
   transition: width 0.8s ease-out;
 }
 .submit {
+  display: flex;
+  align-items: center;
   font-family: inherit;
   font-size: 1.5rem;
   text-decoration: none;

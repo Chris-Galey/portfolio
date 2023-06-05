@@ -112,7 +112,7 @@ export default function Contact() {
 
             <div className={styles.btn}>
               <button className={styles.submit} type="submit">
-                Submit
+                <p>Submit</p>
               </button>
               <p>{success === null ? "" : "Success"}</p>
             </div>
