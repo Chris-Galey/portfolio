@@ -44,19 +44,20 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = { name, email, message };
-    const formData = new formData(form);
+    // const formData = new formData(form);
+    console.log(form);
     try {
       await fetch("/contact", {
         method: "POST",
 
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
 
-        body: new URLSearchParams(formData).toString(),
+        body: new URLSearchParams(form).toString(),
       });
 
-      setSuccess("Thank you for your message! I will get back to you soon.");
+      setSuccess(true);
     } catch (error) {
-      setSuccess("Sorry, something went wrong. Please try again.");
+      setSuccess(false);
 
       console.error(error);
     }
@@ -137,7 +138,7 @@ export default function Contact() {
               <button className={styles.submit} type="submit">
                 <p>Send</p>
               </button>
-              <p>{success === null ? "" : success}</p>
+              <p>{success ? "success" : ""}</p>
             </div>
           </form>
         </div>
