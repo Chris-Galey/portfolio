@@ -51,9 +51,9 @@ export default function Contact() {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData).toString(),
       });
-      setSuccess("Success");
+      setSuccess("Succcessfully submitted, I'll be in touch!");
     } catch (err) {
-      setSuccess("Failed");
+      setSuccess("Something went wrong, please try again.");
     }
     setName("");
     setEmail("");
