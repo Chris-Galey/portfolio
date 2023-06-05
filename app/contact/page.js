@@ -43,16 +43,19 @@ export default function Contact() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const form = { name, email, message };
-    // const formData = new formData(form);
-    console.log(form);
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("message", message);
+
     try {
       await fetch("/contact", {
         method: "POST",
 
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
 
-        body: new URLSearchParams(form).toString(),
+        body: new URLSearchParams(formData).toString(),
       });
 
       setSuccess(true);
