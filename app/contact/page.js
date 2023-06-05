@@ -44,25 +44,16 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("email", email);
-    formData.append("message", message);
-
+    const formData = new FormData(e.target);
     try {
       await fetch("/contact", {
         method: "POST",
-
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-
         body: new URLSearchParams(formData).toString(),
       });
-
-      setSuccess(true);
-    } catch (error) {
-      setSuccess(false);
-
-      console.error(error);
+      setSuccess("Success");
+    } catch (err) {
+      setSuccess("Failed");
     }
     setName("");
     setEmail("");
@@ -86,11 +77,14 @@ export default function Contact() {
         <h4 className={styles.header__contact}>Let&apos;s chat.</h4>
         <div className={styles.form__wrapper}>
           <form
-            onSubmit={handleSubmit}
-            name="contact"
-            method="POST"
+            method="post"
+            netlify-honeypot="bot-field"
             data-netlify="true"
+            name="contact"
+            onSubmit={handleSubmit}
           >
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
             <div className={styles.content}>
               <div className={styles.info}>
                 <label htmlFor="yourname">
@@ -136,7 +130,6 @@ export default function Contact() {
                 <p>{messageError && "500 characters or less"}</p>
               </div>
             </div>
-
             <div className={styles.btn}>
               <button className={styles.submit} type="submit">
                 <p>Send</p>
