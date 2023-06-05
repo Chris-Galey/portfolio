@@ -41,10 +41,25 @@ export default function Contact() {
       setMessageError(false);
     }
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const myForm = { email, name, message };
+    const form = { name, email, message };
+    const formData = new formData(form);
+    try {
+      await fetch("/contact", {
+        method: "POST",
 
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      setSuccess("Thank you for your message! I will get back to you soon.");
+    } catch (error) {
+      setSuccess("Sorry, something went wrong. Please try again.");
+
+      console.error(error);
+    }
     setName("");
     setEmail("");
     setMessage("");
@@ -66,14 +81,20 @@ export default function Contact() {
       <div className={styles.form}>
         <h4 className={styles.header__contact}>Let&apos;s chat.</h4>
         <div className={styles.form__wrapper}>
-          <form onSubmit={handleSubmit} method="POST">
+          <form
+            onSubmit={handleSubmit}
+            name="contact"
+            method="POST"
+            data-netlify="true"
+          >
             <div className={styles.content}>
               <div className={styles.info}>
-                <label htmlFor="name">
+                <label htmlFor="yourname">
                   Name
                   <input
+                    name="name"
                     type="text"
-                    id="name"
+                    id="yourname"
                     placeholder="Your Name"
                     value={name}
                     onChange={nameChangeHandler}
@@ -82,11 +103,12 @@ export default function Contact() {
                   <p>{nameError && "Name below 25 characters please"}</p>
                 </label>
 
-                <label htmlFor="email">
+                <label htmlFor="youremail">
                   Email
                   <input
+                    name="email"
                     type="email"
-                    id="email"
+                    id="youremail"
                     placeholder="Your Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -96,10 +118,11 @@ export default function Contact() {
               </div>
 
               <div className={styles.msg}>
-                <label htmlFor="message">
+                <label htmlFor="yourmessage">
                   Message
                   <textarea
-                    id="message"
+                    name="message"
+                    id="yourmessage"
                     value={message}
                     placeholder="Your Message..."
                     onChange={msgChangeHandler}
@@ -112,9 +135,9 @@ export default function Contact() {
 
             <div className={styles.btn}>
               <button className={styles.submit} type="submit">
-                <p>Submit</p>
+                <p>Send</p>
               </button>
-              <p>{success === null ? "" : "Success"}</p>
+              <p>{success === null ? "" : success}</p>
             </div>
           </form>
         </div>
