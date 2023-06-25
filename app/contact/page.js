@@ -9,7 +9,7 @@ const services = [
   {
     title: "Back-end",
     description:
-      "Light experience using NodeJS, express, and MongoDB, including user authentication and payments.",
+      "Experience using NodeJS, express, and MongoDB, including user authentication and payments.",
   },
   {
     title: "UI/UX",
